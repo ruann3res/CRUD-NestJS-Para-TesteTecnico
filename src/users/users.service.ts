@@ -14,10 +14,8 @@ export class UsersService {
   }
 
   findAll() {
-    // throw new UnauthorizedError('Nao autorizado.');
     return this.repository.findAll();
   }
-
   async findOne(id: number): Promise<UserEntity> {
     const user = await this.repository.findOne(id);
 
@@ -27,7 +25,9 @@ export class UsersService {
 
     return user;
   }
-
+  async findByEmail(email: string) {
+    return this.repository.findByEmail(email);
+  }
   update(id: number, updateUserDto: UpdateUserDto) {
     return this.repository.update(id, updateUserDto);
   }

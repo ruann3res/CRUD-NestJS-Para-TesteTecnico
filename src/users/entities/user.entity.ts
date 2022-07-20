@@ -4,6 +4,7 @@ export class UserEntity implements User {
   id: number;
   name: string;
   cpf: string;
+  email: string;
   telephone: string;
   address: string;
   password: string;

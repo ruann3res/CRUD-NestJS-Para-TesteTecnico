@@ -17,6 +17,7 @@ model User {
   telephone String   @unique
   address  String @db.VarChar(255)
   password  String
+  email     String   @unique
   admin     Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())

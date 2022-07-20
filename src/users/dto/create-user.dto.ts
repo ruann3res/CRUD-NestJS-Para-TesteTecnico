@@ -1,5 +1,6 @@
 import {
   IsBoolean,
+  IsEmail,
   IsNotEmpty,
   IsString,
   Matches,
@@ -14,6 +15,10 @@ export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   cpf: string;
+
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
 
   @IsString()
   @IsNotEmpty()

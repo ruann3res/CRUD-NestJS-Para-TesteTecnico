@@ -27,6 +27,14 @@ export class UsersRepository {
     return this.prisma.user.findMany();
   }
 
+  async findByEmail(email: string): Promise<UserEntity> {
+    return this.prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+  }
+
   async findOne(id: number): Promise<UserEntity> {
     return this.prisma.user.findUnique({
       where: {

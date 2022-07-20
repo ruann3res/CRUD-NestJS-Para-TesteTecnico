@@ -6,6 +6,7 @@ CREATE TABLE "user" (
     "telephone" TEXT NOT NULL,
     "address" VARCHAR(255) NOT NULL,
     "password" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
     "admin" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -32,3 +33,6 @@ CREATE UNIQUE INDEX "user_cpf_key" ON "user"("cpf");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "user_telephone_key" ON "user"("telephone");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "user_email_key" ON "user"("email");
