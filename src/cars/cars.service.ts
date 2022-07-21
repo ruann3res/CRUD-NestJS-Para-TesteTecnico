@@ -25,4 +25,7 @@ export class CarsService {
   remove(id: number) {
     return { message: 'ok' };
   }
+  getWithPagination(limit: number) {
+    return this.repository.getWithPagination(limit);
+  }
 }

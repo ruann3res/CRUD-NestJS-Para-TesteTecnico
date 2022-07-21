@@ -42,4 +42,12 @@ export class CarsRepository {
       },
     });
   }
+  async getWithPagination(limit: number) {
+    return this.prisma.cars.findMany({
+      take: limit,
+      where: {
+        onSale: true,
+      },
+    });
+  }
 }
