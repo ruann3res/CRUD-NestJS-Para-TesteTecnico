@@ -11,6 +11,7 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiForbiddenResponse, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { IsPublic } from 'src/auth/decorators/is-public.decorator';
 
 @ApiTags('Users')
 @Controller('users')
@@ -19,6 +20,7 @@ export class UsersController {
 
   @ApiResponse({ status: 409, description: 'Email already exists' })
   @ApiForbiddenResponse({ description: 'Acesso negado.' })
+  @IsPublic()
   @Post('/create')
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
